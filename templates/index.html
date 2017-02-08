@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tiled WMS</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <script>
+      var layers = [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
+        new ol.layer.Tile({
+          extent: [-13884991, 2870341, -7455066, 6338219],
+          source: new ol.source.TileWMS({
+            url: 'http://54.244.200.246:8080/geoserver/hensonhgt_sample/wms',
+            params: {'LAYERS': 'hensonhgt_sample:military', 'TILED': true},
+            serverType: 'geoserver'
+          })
+        })
+      ];
+      var map = new ol.Map({
+        layers: layers,
+        target: 'map',
+        view: new ol.View({
+          center: [-10997148, 4569099],
+          zoom: 4
+        })
+      });
+
+
+
+/*      var untiled = new ol.layer.Image({
+        source: new ol.source.ImageWMS({
+          ratio: 1,
+          url: 'http://54.244.200.246:8080/geoserver/hensonhgt_sample/wms',
+          params: {'FORMAT': format,
+                   'VERSION': '1.1.1',  
+                STYLES: '',
+                LAYERS: 'hensonhgt_sample:military',
+          }
+        })
+      });
+      var tiled = new ol.layer.Tile({
+        visible: false,
+        source: new ol.source.TileWMS({
+          url: 'http://54.244.200.246:8080/geoserver/hensonhgt_sample/wms',
+          params: {'FORMAT': format, 
+                   'VERSION': '1.1.1',
+                   tiled: true,
+                STYLES: '',
+                LAYERS: 'hensonhgt_sample:military',
+             tilesOrigin: 17.9676914215088 + "," + -34.2541580200195
+          }
+        })
+      });*/
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+
+	<title>WMS example - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+
+	<style>
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+
+</head>
+<body>
+
+	<div id='map'></div>
+
+	<script type="text/javascript">
+
+		var map = L.map('map', {
+			center: [-32.380, 25.400],
+			zoom: 5
+		});
+
+		var wmsLayer = L.tileLayer.wms('http://54.244.200.246:8080/geoserver/oms?', {
+			/*layers: 'hensonhgt_sample:SA'*/
+			layers: 'hensonhgt_sample:military'
+
+			/*format: 'image/png',
+			transparent: true,
+			attribution: "Weather data © 2012 IEM Nexrad"*/
+		}).addTo(map);
+
+/*		var wmsLayer = L.tileLayer.wms('http://0.0.0.0:8080/geoserver/ows?',{
+			layers: 'topp:states',
+			layers: 'hensonhgt_sample:SA',
+			format: 'image/png',
+			transparent: true,
+			attribution: "Weather data © 2012 IEM Nexrad"
+		}).addTo(map);*/
+	</script>
+
+</body>
+</html> -->
