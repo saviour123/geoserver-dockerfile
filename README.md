@@ -19,6 +19,7 @@ Point your browser to `127.0.0.1:8080/geoserver`
 Docker volumes can be used to persist your data.
 
 `$ mkdir -p ~/geoserver_data`
+
 `$ docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir kartoza/geoserver`
 
 ### Miscellaneous
