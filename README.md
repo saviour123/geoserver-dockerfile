@@ -1,7 +1,10 @@
 ## Usage
 
-Clone the Repository
-`git clone https://github.com/saviour123/hgt_geoserver.git && cd hgt_geoserver`
+This dokerfile helps you to deploy geoserver v10 on ubuntu. on docker containers. This is simple and straight 
+forward.
+
+#### Clone the Repository
+`$ git clone https://github.com/saviour123/hgt_geoserver.git && cd hgt_geoserver`
 
 #### Build the Docker Image
 `$ docker build -t "sav/hgt_geoserver" .`
