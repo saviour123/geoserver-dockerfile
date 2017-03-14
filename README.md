@@ -1,6 +1,6 @@
 ## Usage
 
-This dokerfile helps you to deploy geoserver v10 on ubuntu. on docker containers. This is simple and straight 
+This dockerfile helps you to deploy geoserver v10 on ubuntu. on docker containers. This is simple and straight 
 forward.
 
 #### Clone the Repository
