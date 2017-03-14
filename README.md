@@ -9,11 +9,9 @@ forward.
 #### Build the Docker Image
 `$ docker build -t "sav/hgt_geoserver" .`
 
-#### Run the image
-`docker run --name "geoserver" -d -p 8080:8080 sav/hgt_geoserver` \\simple run.
-
 #### Lets Run the Geoserver Persistent
 `$ docker run --name geoserver --restart=always -d -p 8080:8080 -v /data/geoserver_data:/opt/geoserver/data_dir sav/hgt_geoserver`
+Point your browser to `127.0.0.1:8080/geoserver`
 
 ### Miscellaneous
 List available running containers:
