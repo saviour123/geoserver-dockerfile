@@ -20,7 +20,7 @@ Docker volumes can be used to persist your data.
 
 `$ mkdir -p ~/geoserver_data`
 
-`$ docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir kartoza/geoserver`
+`$ docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir sav/hgt_geoserver`
 
 ### Miscellaneous
 List available running containers:
